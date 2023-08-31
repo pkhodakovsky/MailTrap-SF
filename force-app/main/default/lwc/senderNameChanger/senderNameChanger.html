@@ -1,0 +1,16 @@
+<template>
+    <lightning-card>
+        <div class="slds-m-around_large">
+            <h2 class="slds-text-heading_medium slds-m-bottom_medium">
+                Emails will be sent as : <b>{currentSenderName}</b>
+            </h2>
+            <div class="slds-m-vertical_medium">
+                <lightning-input type="text" label="Change the outgoing name" placeholder="type here..." max-length="80" value={newSenderName} onchange={handleChangeSenderName}></lightning-input>
+            </div>
+            <lightning-button variant="brand" label="Save" title="Save the new name" onclick={handleSaveSenderName}></lightning-button>
+        </div>
+        <template lwc:if={loading}>
+            <lightning-spinner alternative-text="Loading"></lightning-spinner>
+        </template>
+    </lightning-card>
+</template>
